@@ -1,9 +1,14 @@
 
 import './App.css';
+import Freetrial from './Components/signup/Freetrial';
+
 function App() {
+
+
   return (
     <div className="App">
-      <h1>Timely.com</h1>
+   
+  <Freetrial/>
     </div>
   );
 }
