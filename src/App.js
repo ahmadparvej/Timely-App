@@ -1,13 +1,17 @@
 
-import './App.css';
+
 import Project from './Components/projectsNav/Project';
+import Sidebar from "./Components/Sidebar.tsx";
+import { Box } from "@chakra-ui/react";
+import Freetrial from './Components/signup/Freetrial';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Timely.com</h1>
-      <Project/>
-    </div>
+    <Box>
+   <Sidebar/>
+  <Freetrial/>
+   <Project/>
+    </Box>
   );
 }
 
