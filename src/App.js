@@ -8,11 +8,15 @@ import { Tasks } from './Components/Tasks/Tasks';
 import { Peoples } from './Components/people/Peoples';
 import { Reports } from './Components/reports/Reports';
 import { Invoices } from './Components/invoices/Invoices';
+import HomePart1 from "./Components/HomePage/HomePart1";
 
 function App() {
   return (
     <Box>
-      <Flex>
+      <Box>
+         <HomePart1/>
+      </Box>
+      {/* <Flex>
         <Sidebar />
         <Routes>
           <Route path="/hours" element={<Dashboard/>} />
@@ -22,8 +26,8 @@ function App() {
           <Route path="/reports" element={<Reports/>} />
           <Route path="/invoices" element={<Invoices/>} />
         </Routes>
-      </Flex>
-      <Freetrial />
+      </Flex> */}
+      {/* <Freetrial /> */}
     </Box>
   );
 }
