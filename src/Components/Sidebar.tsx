@@ -5,7 +5,6 @@ import {
   Flex,
   Icon,
   useColorModeValue,
-  Link,
   Drawer,
   DrawerContent,
   Text,
@@ -13,6 +12,9 @@ import {
   BoxProps,
   FlexProps,
 } from '@chakra-ui/react';
+
+import { Link } from "react-router-dom";
+
 import { IconType } from 'react-icons';
 import {BsFillClockFill,BsFillBagFill, BsBarChartFill, BsFillArrowUpSquareFill} from "react-icons/bs"
 import {MdTask} from "react-icons/md"
@@ -26,12 +28,12 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: '', icon: BsFillArrowUpSquareFill },
-  { name: 'HOURS', icon: BsFillClockFill },
-  { name: 'TASK', icon: MdTask },
-  { name: 'PROJECTS', icon: BsFillBagFill },
-  { name: 'PEOPLE', icon: ImUser },
-  { name: 'REPORTS', icon: BsBarChartFill },
-  { name: 'INVOICES', icon: AiFillDollarCircle },
+  { name: 'hours', icon: BsFillClockFill },
+  { name: 'tasks', icon: MdTask },
+  { name: 'projects', icon: BsFillBagFill },
+  { name: 'peoples', icon: ImUser },
+  { name: 'reports', icon: BsBarChartFill },
+  { name: 'invoices', icon: AiFillDollarCircle },
 ];
 
 export default function SidebarWithHeader({
@@ -86,7 +88,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       </Flex>
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon} link={link.name}>
-          {link.name}
+          {link.name.toUpperCase()}
         </NavItem>
       ))}
     </Box>
@@ -99,10 +101,8 @@ interface NavItemProps extends FlexProps {
   link:string
 }
 const NavItem = ({ icon, children, link, ...rest }: NavItemProps) => {
-  console.log(link);
-  
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link to={link} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
