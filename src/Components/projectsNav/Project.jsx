@@ -17,7 +17,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import ServerQuickActions from "./ImportButton";
 const Project = () => {
   return (
-    <Flex name="main">
+    <Flex name="main" w="100%">
       <Box name="left">
         <Heading as="md">Projects</Heading>
         <Box>
