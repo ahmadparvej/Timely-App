@@ -59,7 +59,7 @@ export default function SidebarWithHeader({
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <Box ml={{ base: "full", md: 20 }} >
         {children}
       </Box>
     </Box>
@@ -78,7 +78,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.200', 'gray.700')}
       w={{ base: 'full', md: 20 }}
-      pos="fixed"
+      pos="absolute"
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
