@@ -19,11 +19,14 @@ import {
     PopoverTrigger,
     Portal,
     PopoverContent,
-    PopoverArrow
+    PopoverArrow,
+    PopoverBody
 } from "@chakra-ui/react"
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { BsCircleFill } from "react-icons/bs";
 import { MdArrowDropDown } from "react-icons/md";
+import { FaUser } from "react-icons/fa"
+import ProjectColors from './ProjectColors';
 
 
 
@@ -45,7 +48,7 @@ export const NewProject = () => {
                     </HStack>
                 </Flex>
                 {/* Project details */}
-                <Box h="300px" p="20px" bg="white" variant="outline">
+                <Box h="300px" p="20px" bg="white" variant="outline" borderRadius="5px" mb="22px">
                     <Flex>
                         <VStack mr="9%" align="flex-start" width="20%" textAlign="left">
                             <Text fontSize="18px" color="#44505E" fontWeight="bold">Project details</Text>
@@ -55,15 +58,20 @@ export const NewProject = () => {
                             <GridItem colSpan={3}>
                                 <FormControl>
                                     <FormLabel color="gray" fontWeight="normal">PROJECT NAME</FormLabel>
-                                    <Input placeholder=''></Input>
+                                    <Input placeholder='Project name'></Input>
                                 </FormControl>
                             </GridItem>
                             <GridItem colSpan={1}>
                                 <FormControl textAlign="left">
                                     <FormLabel color="gray" fontWeight="normal">COLOR</FormLabel>
-                                    <Button p="0px 25px" variant="outline" colorScheme="gray" color="grey" borderWidth="3px">
-                                        <Icon color="#bbdefb" fontSize="25px" as={BsCircleFill} />
-                                    </Button>
+                                    <Popover>
+                                        <PopoverTrigger>
+                                            <Button p="0px 25px" variant="outline" colorScheme="gray" color="grey" borderWidth="3px">
+                                                <Icon color="#e57373" fontSize="25px" as={BsCircleFill} />
+                                            </Button>
+                                        </PopoverTrigger>
+                                        <ProjectColors />
+                                    </Popover>
                                 </FormControl>
                             </GridItem>
                             <GridItem colSpan={3}>
@@ -84,9 +92,12 @@ export const NewProject = () => {
                                             </Button>
                                         </PopoverTrigger>
                                         <Portal>
-                                            <PopoverContent>
+                                            <PopoverContent width="75%">
                                                 <PopoverArrow />
-                                                <Button colorScheme='blue'>Button</Button>
+                                                <PopoverBody>
+                                                    <Input placeholder='Enter client name' />
+                                                    <Button mt="10px" width="100%" colorScheme='blue'>Create client</Button>
+                                                </PopoverBody>
                                             </PopoverContent>
                                         </Portal>
                                     </Popover>
@@ -105,7 +116,35 @@ export const NewProject = () => {
                         </SimpleGrid>
                     </Flex>
                 </Box>
-
+                {/* People and Rates */}
+                <Box h="300px" p="20px" bg="white" variant="outline" borderRadius="5px" mb="20px">
+                    <Flex>
+                        <VStack mr="9%" align="flex-start" width="20%" textAlign="left">
+                            <Text fontSize="18px" color="#44505E" fontWeight="bold">People & Hourly rates</Text>
+                            <Text color="grey">Add people to allow them to log hours to this project.</Text>
+                            <Text color="grey">Add people to allow them to log hours to this project.</Text>
+                        </VStack>
+                        <SimpleGrid width="60%" columns={4} columnGap={3} rowGap={3}>
+                            <GridItem colSpan={3}>
+                                    
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Input icon={<MdArrowDropDown />} color="gray" placeholder='Choose people to add'/>
+                                    </PopoverTrigger>
+                                    <Portal>
+                                        <PopoverContent width="75%">
+                                            <PopoverArrow />
+                                            <PopoverBody>
+                                                <Input placeholder='Enter client name' />
+                                                <Button mt="10px" width="100%" colorScheme='blue'>Create client</Button>
+                                            </PopoverBody>
+                                        </PopoverContent>
+                                    </Portal>
+                                </Popover>
+                            </GridItem>
+                        </SimpleGrid>
+                    </Flex>
+                </Box>
             </Box>
         </Box>
     )
