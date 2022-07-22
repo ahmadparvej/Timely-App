@@ -16,7 +16,7 @@ function App() {
       <Box>
          <HomePart1/>
       </Box>
-      {/* <Flex>
+      <Flex>
         <Sidebar />
         <Routes>
           <Route path="/hours" element={<Dashboard/>} />
@@ -26,8 +26,8 @@ function App() {
           <Route path="/reports" element={<Reports/>} />
           <Route path="/invoices" element={<Invoices/>} />
         </Routes>
-      </Flex> */}
-      {/* <Freetrial /> */}
+      </Flex> 
+      <Freetrial />
     </Box>
   );
 }
