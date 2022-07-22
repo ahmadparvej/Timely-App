@@ -40,6 +40,7 @@ import { FaArchive } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 import axios from "axios";
+import Recent from "../recentAct/Recent";
 
 function ProjectDash() {
   const [projects, setProjects] = useState([]);
@@ -56,7 +57,7 @@ function ProjectDash() {
   };
   return (
     <Box  w="100%" bg="#f6f6f7">
-      <Text>Recent and pinned projects</Text>
+      <Heading fontSize={"sm"} m="10px 10px 10px 0px">Recent and pinned projects</Heading>
       <Wrap>
         {projects.map((ele) => (
           <Flex
@@ -70,7 +71,8 @@ function ProjectDash() {
               <Box
                 background={ele.color}
                 w="30px"
-                h="25px"
+                h="30px"
+                pt="4px"
                 textAlign={"center"}
                 borderRadius="5px"
               >
@@ -170,6 +172,7 @@ function ProjectDash() {
           </Flex>
         ))}
       </Wrap>
+      <Recent/>
     </Box>
   );
 }

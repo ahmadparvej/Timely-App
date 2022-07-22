@@ -18,7 +18,6 @@ import { FaUserAlt } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 
 import ServerQuickActions from "./ImportButton";
-import ProjectDash from "../projectDash/ProjectDash";
 const ProjectNav = () => {
   return (
     <Flex
