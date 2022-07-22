@@ -43,13 +43,14 @@ import axios from "axios";
 import Recent from "../recentAct/Recent";
 
 function ProjectDash() {
+  const projectId=JSON.parse(localStorage.getItem("projectId"))
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     getData();
   }, []);
 
   const getData = () => {
-    axios.get("http://localhost:6060/projects").then((res) => {
+    axios.get("http://localhost:8080/user/").then((res) => {
       console.log(res.data);
       const data = res.data;
       setProjects(data);

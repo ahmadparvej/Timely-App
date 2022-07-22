@@ -16,10 +16,10 @@ import {
 import { AddIcon } from "@chakra-ui/icons";
 import { FaUserAlt } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
-import { Navigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import ServerQuickActions from "./ImportButton";
 const ProjectNav = () => {
-  const navigate = Navigate;
+  const navigate = useNavigate();
   return (
     <Flex
       name="main"
@@ -83,21 +83,18 @@ const ProjectNav = () => {
           alignSelf={"center"}
           p="0px"
         >
-          <Link to="/new">
-            {" "}
-            <Button
-              leftIcon={<AddIcon />}
-              background={"#3d73da"}
-              color="white"
-              variant="solid"
-              h="32px"
-              _hover={{ background: "blue" }}
-              _active={{ background: "blue" }}
-              // onClick={(navigate("/new"))}
-            >
-              New Project
-            </Button>
-          </Link>
+          <Button
+            leftIcon={<AddIcon />}
+            background={"#3d73da"}
+            color="white"
+            variant="solid"
+            h="32px"
+            _hover={{ background: "blue" }}
+            _active={{ background: "blue" }}
+            onClick={() => navigate("/new")}
+          >
+            New Project
+          </Button>
         </Stack>
       </Flex>
     </Flex>
