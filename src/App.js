@@ -11,15 +11,16 @@ import { Peoples } from './Components/people/Peoples';
 import { Reports } from './Components/reports/Reports';
 import { Invoices } from './Components/invoices/Invoices';
 import HomePart1 from "./Components/HomePage/HomePart1";
-
+import Navbar from "./Components/Navbar/Navbar.tsx";
 
 function App() {
   return (
     <Box>
       <Box>
+        <Navbar/>
          <HomePart1/>
       </Box>
-      <Flex>
+      {/* <Flex>
         <Sidebar />
         <Routes>
           <Route path="/hours" element={<Dashboard/>} />
@@ -30,7 +31,7 @@ function App() {
           <Route path="/invoices" element={<Invoices/>} />
         </Routes>
       </Flex> 
-      <Freetrial />
+      <Freetrial /> */}
     </Box>
   );
 }
