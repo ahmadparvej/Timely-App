@@ -58,7 +58,7 @@ const Recent = () => {
         </Box>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px" w="150px">
+          <Flex gap="10px" w="150px" alignItems={"center"}>
             <Box
               bg="#5ebce5 "
               h="30px"
@@ -71,7 +71,9 @@ const Recent = () => {
             >
               <Icon as={BsFillClockFill} color="white" size={"xs"} />
             </Box>
-            <Text>Learn React</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              Learn React
+            </Text>
           </Flex>
           <Flex
             gap="7px"
@@ -82,13 +84,15 @@ const Recent = () => {
           >
             <Icon as={TbRotateClockwise2} color="#5ebce5" size={"xs"} />
             <Heading fontSize={"sm"}>Affan Ahmad</Heading>
-            <Text>logged hours for the first time on this project</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              logged hours for the first time on this project
+            </Text>
           </Flex>
           <Box mr="20px">23:52</Box>
         </Flex>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px" w="150px">
+          <Flex gap="10px" w="150px" alignItems={"center"}>
             <Box
               bg="#5ebce5 "
               h="30px"
@@ -101,7 +105,9 @@ const Recent = () => {
             >
               <Icon as={IoMdBriefcase} color="white" size={"xs"} />
             </Box>
-            <Text>Communication</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              Communication
+            </Text>
           </Flex>
           <Flex
             gap="7px"
@@ -112,13 +118,15 @@ const Recent = () => {
           >
             <Icon as={TbRotateClockwise2} color="#5ebce5" size={"xs"} />
             <Heading fontSize={"sm"}>Affan Ahmad</Heading>
-            <Text>created this project</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              created this project
+            </Text>
           </Flex>
           <Box mr="20px">23:52</Box>
         </Flex>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px" w="150px">
+          <Flex gap="10px" w="150px" alignItems={"center"}>
             <Box
               bg="#5ebce5 "
               h="30px"
@@ -131,7 +139,9 @@ const Recent = () => {
             >
               <Icon as={FaBlackTie} color="white" size={"xs"} />
             </Box>
-            <Text>Pankaj</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              Pankaj
+            </Text>
           </Flex>
           <Flex
             gap="7px"
@@ -142,13 +152,15 @@ const Recent = () => {
           >
             <Icon as={TbRotateClockwise2} color="#5ebce5" size={"xs"} />
             <Heading fontSize={"sm"}>Affan Ahmad</Heading>
-            <Text>created client</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              created client
+            </Text>
           </Flex>
           <Box mr="20px">23:52</Box>
         </Flex>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px" w="150px">
+          <Flex gap="10px" w="150px" alignItems={"center"}>
             <Box
               bg="#5ebce5 "
               h="30px"
@@ -161,7 +173,9 @@ const Recent = () => {
             >
               <Icon as={IoMdBriefcase} color="white" size={"xs"} />
             </Box>
-            <Text>Learn React</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              Learn React
+            </Text>
           </Flex>
           <Flex
             gap="7px"
@@ -172,7 +186,9 @@ const Recent = () => {
           >
             <Icon as={TbRotateClockwise2} color="#5ebce5" size={"xs"} />
             <Heading fontSize={"sm"}>Affan Ahmad</Heading>
-            <Text>created this project</Text>
+            <Text fontSize={"sm"} fontWeight="500">
+              created this project
+            </Text>
           </Flex>
           <Box mr="20px">23:52</Box>
         </Flex>
