@@ -25,7 +25,7 @@ const ServerQuickActions = () => {
     /**
      * You may move the Popover outside Flex.
      */
-    <Flex justifyContent="center"  w="fit-content"  >
+    <Flex justifyContent="center" w="fit-content">
       <Popover placement="bottom" isLazy>
         <PopoverTrigger>
           <Button
@@ -33,7 +33,7 @@ const ServerQuickActions = () => {
             colorScheme="white"
             w="fit-content"
             color="black"
-            border="0.5px solid black"
+            border="0.5px solid darkgray"
             background="white"
             h="32px"
           >
@@ -63,7 +63,7 @@ const ServerQuickActions = () => {
                 </Tab>
               </TabList>
               <TabPanels>
-              <Flex  justifyContent={"space-around"}>
+                <Flex justifyContent={"space-around"}>
                   <Box background="gray" w="38px" h="35px" borderRadius={"5px"}>
                     <Image
                       boxSize={"33px"}
@@ -77,7 +77,7 @@ const ServerQuickActions = () => {
                     </Text>
                   </Box>
                 </Flex>
-                <Flex  justifyContent={"space-around"}>
+                <Flex justifyContent={"space-around"}>
                   <Box background="gray" w="40px" h="40px" borderRadius={"5px"}>
                     <Image
                       boxSize={"33px"}

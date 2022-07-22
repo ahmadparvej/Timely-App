@@ -83,6 +83,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       w={{ base: 'full', md: 20 }}
       pos="absolute"
       h="full"
+   
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
       <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />

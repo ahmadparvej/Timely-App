@@ -27,7 +27,7 @@ import { BsCircleFill } from "react-icons/bs";
 import { MdArrowDropDown } from "react-icons/md";
 import { FaUser } from "react-icons/fa"
 import ProjectColors from './ProjectColors';
-
+import { Link } from "react-router-dom";
 
 
 export const NewProject = () => {
@@ -37,10 +37,11 @@ export const NewProject = () => {
                 {/* navbar */}
                 <Flex direction="column" pb="70px">
                     <HStack justifyContent="space-between" mb="15px">
-                        <Button variant="outline" colorScheme="gray" color="grey" borderWidth="3px">
+                        <Link to="/projects"> <Button variant="outline" colorScheme="gray" color="grey" borderWidth="3px">
                             <Icon as={BiLeftArrowAlt} />
                             Back
-                        </Button>
+                        </Button></Link>
+                       
                         <Button bg="#3D73DA" color="white" p="5px 15px">Create Project</Button>
                     </HStack>
                     <HStack>

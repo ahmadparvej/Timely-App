@@ -16,9 +16,10 @@ import {
 import { AddIcon } from "@chakra-ui/icons";
 import { FaUserAlt } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
-
+import { Navigate, Link } from "react-router-dom";
 import ServerQuickActions from "./ImportButton";
 const ProjectNav = () => {
+  const navigate = Navigate;
   return (
     <Flex
       name="main"
@@ -29,13 +30,27 @@ const ProjectNav = () => {
       pos="sticky"
       top="0px"
     >
-      <Box name="left" m="auto" h="100%" ml="20px" w="30%" >
-        <Heading as="md" mb="10px">Projects</Heading>
-      
+      <Box name="left" m="auto" h="100%" ml="20px" w="30%">
+        <Heading as="md" mb="10px">
+          Projects
+        </Heading>
       </Box>
       <Flex name="right" pl="100px" gap="10px" w="70%" alignItems={"center"}>
-        <Flex gap="0px" justifyContent={"center"} border="1px solid gray"  alignSelf={"center"}  h="35px" >
-          <IconButton icon={<AiOutlineSearch />} background="white" h="32px" disabled={"true"} />
+        <Flex
+          gap="0px"
+          justifyContent={"center"}
+          border="0.5px solid darkgray"
+          background="white"
+          alignSelf={"center"}
+          borderRadius="5px"
+          h="35px"
+        >
+          <IconButton
+            icon={<AiOutlineSearch />}
+            background="white"
+            h="32px"
+            disabled={"true"}
+          />
 
           <Input
             placeholder="  Client or Project"
@@ -49,22 +64,40 @@ const ProjectNav = () => {
             h="32px"
           />
         </Flex>
-        <Button h="32px" border="1px solid gray"  background="white" leftIcon={<FaUserAlt />} alignSelf={"center"} p="0px" w="150px">
+        <Button
+          h="32px"
+          border="0.5px solid darkgray"
+          background="white"
+          leftIcon={<FaUserAlt />}
+          alignSelf={"center"}
+          p="0px"
+          w="150px"
+        >
           Manage clients
         </Button>
-        <ServerQuickActions/>
-        <Stack  h="32px" direction="row" spacing={4} alignSelf={"center"} p="0px">
-          <Button
-            leftIcon={<AddIcon />}
-            background={"#3d73da"}
-            color="white"
-            variant="solid"
-            h="32px"
-            _hover={{ background: "blue" }}
-            _active={{ background: "blue" }}
-          >
-            New Project
-          </Button>
+        <ServerQuickActions />
+        <Stack
+          h="32px"
+          direction="row"
+          spacing={4}
+          alignSelf={"center"}
+          p="0px"
+        >
+          <Link to="/new">
+            {" "}
+            <Button
+              leftIcon={<AddIcon />}
+              background={"#3d73da"}
+              color="white"
+              variant="solid"
+              h="32px"
+              _hover={{ background: "blue" }}
+              _active={{ background: "blue" }}
+              // onClick={(navigate("/new"))}
+            >
+              New Project
+            </Button>
+          </Link>
         </Stack>
       </Flex>
     </Flex>
