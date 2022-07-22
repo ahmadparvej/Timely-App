@@ -57,8 +57,8 @@ function ProjectDash() {
   };
   return (
     <Box  w="100%" bg="#f6f6f7">
-      <Heading fontSize={"sm"} m="10px 10px 10px 0px">Recent and pinned projects</Heading>
-      <Wrap p="30px" gap="30px">
+      <Heading fontSize={"sm"} m="10px 10px 0px 0px">Recent and pinned projects</Heading>
+      <Wrap p="30px" spacing="30px">
         {projects.map((ele) => (
           <Flex
             w="300px"

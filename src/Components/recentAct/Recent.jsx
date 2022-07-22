@@ -21,7 +21,7 @@ const Recent = () => {
     <Box>
       {/* top bar */}
       <Flex justifyContent={"space-between"}>
-        <Box m="40px 10px 10px 0px">
+        <Box m="40px 10px 20px 0px">
           <Heading fontSize={"md"}>Latest Activities</Heading>
         </Box>
         <Box mt="20px">

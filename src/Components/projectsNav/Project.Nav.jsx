@@ -26,6 +26,8 @@ const ProjectNav = () => {
       h="80px"
       background={"#eef1f2"}
       justifyContent="space-around"
+      pos="sticky"
+      top="0px"
     >
       <Box name="left" m="auto" h="100%" ml="20px" w="30%" >
         <Heading as="md" mb="10px">Projects</Heading>
