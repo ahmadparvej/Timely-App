@@ -16,6 +16,8 @@ import {
   Button,
   Stack,
   Icon,
+  VStack,
+  HStack
 } from "@chakra-ui/react";
 import {
   Popover,
@@ -53,15 +55,16 @@ function ProjectDash() {
     });
   };
   return (
-    <Box border="1px solid blue" w="100%">
+    <Box  w="100%" bg="#f6f6f7">
       <Text>Recent and pinned projects</Text>
       <Wrap>
         {projects.map((ele) => (
           <Flex
-            w="200px"
-            border="1px solid black"
+            w="300px"
+            h="90px"
             justifyContent={"space-between"}
-            p="15px"
+            p="30px"
+            bg="white"
           >
             <Flex gap="5px">
               <Box
@@ -73,10 +76,14 @@ function ProjectDash() {
               >
                 <Icon as={IoMdBriefcase} color="white" />
               </Box>
-              <Box>
-                <Heading fontSize={"xs"}>{ele.title}</Heading>
-                <Text fontSize={"xs"}>{ele.name}</Text>
-              </Box>
+              <VStack h="40px" alignItems="left">
+                <Heading fontSize={"xs"} textAlign="left">
+                  {ele.title}
+                </Heading>
+                <Text fontSize={"xs"} textAlign="left">
+                  {ele.name}
+                </Text>
+              </VStack>
             </Flex>
 
             <Box>
@@ -94,7 +101,12 @@ function ProjectDash() {
                     <Icon as={BsThreeDots} />
                   </Box>
                 </PopoverTrigger>
-                <PopoverContent bg="white" color="black" w="auto">
+                <PopoverContent
+                  bg="white"
+                  color="black"
+                  w="auto"
+                  boxShadow="base"
+                >
                   {/* <PopoverHeader fontWeight="semibold">
                     Customization
                   </PopoverHeader> */}
@@ -106,8 +118,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
-                      
+                      mb="10px"
                     >
                       <Icon as={GoPin} />
                       <Text fontSize={"sm"}>Pin to dashboard</Text>
@@ -117,7 +128,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
                     >
                       <Icon as={GrEdit} />
                       <Text fontSize={"sm"}>Edit</Text>
@@ -127,7 +138,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
                     >
                       <Icon as={IoIosCopy} />
                       <Text fontSize={"sm"}>Duplicate</Text>
@@ -137,7 +148,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
                     >
                       <Icon as={FaArchive} />
                       <Text fontSize={"sm"}>Archive</Text>
@@ -147,7 +158,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
                     >
                       <Icon as={RiDeleteBin6Line} />
                       <Text fontSize={"sm"}>Delete</Text>

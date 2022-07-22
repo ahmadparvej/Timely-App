@@ -25,7 +25,6 @@ const ProjectNav = () => {
       name="main"
       w="100%"
       h="80px"
-      border={"1px solid red"}
       background={"#eef1f2"}
       justifyContent="space-around"
     >
@@ -33,9 +32,9 @@ const ProjectNav = () => {
         <Heading as="md" mb="10px">Projects</Heading>
       
       </Box>
-      <Flex name="right" pl="100px" gap="10px" w="70%">
+      <Flex name="right" pl="100px" gap="10px" w="70%" alignItems={"center"}>
         <Flex gap="0px" justifyContent={"center"} border="1px solid gray"  alignSelf={"center"}  h="35px" >
-          <IconButton icon={<AiOutlineSearch />} background="white"  h="32px" />
+          <IconButton icon={<AiOutlineSearch />} background="white" h="32px" disabled={"true"} />
 
           <Input
             placeholder="  Client or Project"
@@ -60,6 +59,8 @@ const ProjectNav = () => {
             color="white"
             variant="solid"
             h="32px"
+            _hover={{ background: "blue" }}
+            _active={{ background: "blue" }}
           >
             New Project
           </Button>
