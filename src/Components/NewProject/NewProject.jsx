@@ -54,17 +54,20 @@ export const NewProject = () => {
 
     const handleChange = (e) => {
         let { name, value } = e.target;
+        console.log('value:', value)
+        console.log('name:', name)
         setNewProject({
             ...newProject,
             [name]: value,
             singColor
         })
-        setClientName(newProject.client)
+        setClientName(value)
+        console.log('value:', value)
     }
     const handleSubmit = () => {
         console.log(newProject);
         let payload=JSON.stringify(newProject);
-        fetch("http://localhost:8080/newproject",{
+        fetch("http://localhost:8080/projects",{
             headers:{
                 "content-Type":"Application/json"
             },
