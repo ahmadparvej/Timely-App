@@ -58,7 +58,7 @@ const Recent = () => {
         </Box>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px">
+          <Flex gap="4px" w="150px">
             <Box
               bg="#5ebce5 "
               h="30px"
@@ -88,7 +88,7 @@ const Recent = () => {
         </Flex>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px">
+          <Flex gap="4px" w="150px">
             <Box
               bg="#5ebce5 "
               h="30px"
@@ -118,7 +118,7 @@ const Recent = () => {
         </Flex>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px">
+          <Flex gap="4px" w="150px">
             <Box
               bg="#5ebce5 "
               h="30px"
@@ -148,7 +148,7 @@ const Recent = () => {
         </Flex>
         <br></br>
         <Flex justifyContent={"space-between"}>
-          <Flex gap="4px">
+          <Flex gap="4px" w="150px">
             <Box
               bg="#5ebce5 "
               h="30px"
