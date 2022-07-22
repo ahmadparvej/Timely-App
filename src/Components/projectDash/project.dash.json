@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "General",
+      "name": "Affan",
+      "color":"red"
+    },
+    {
+      "id": 2,
+      "title": "Communication",
+      "name": "Affan",
+      "color":"green"
+    },
+    {
+      "id": 3,
+      "title": "learn Project creation",
+      "name": "Arshad",
+      "color":"blue"
+    },
+    {
+      "id": 4,
+      "title": "learn react",
+      "name": "kiran",
+      "color":"yellow"
+    }
+  ]
+}

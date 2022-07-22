@@ -25,7 +25,7 @@ const ServerQuickActions = () => {
     /**
      * You may move the Popover outside Flex.
      */
-    <Flex justifyContent="center" mt={4} w="fit-content">
+    <Flex justifyContent="center" mt={4} w="fit-content" pt="11.5px"  >
       <Popover placement="bottom" isLazy>
         <PopoverTrigger>
           <Button
@@ -34,6 +34,8 @@ const ServerQuickActions = () => {
             w="fit-content"
             color="black"
             border="0.5px solid black"
+            background="white"
+            h="32px"
           >
             Import
           </Button>
