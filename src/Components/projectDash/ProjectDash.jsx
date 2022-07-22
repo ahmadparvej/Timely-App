@@ -17,7 +17,7 @@ import {
   Stack,
   Icon,
   VStack,
-  HStack
+  HStack,
 } from "@chakra-ui/react";
 import {
   Popover,
@@ -43,22 +43,25 @@ import axios from "axios";
 import Recent from "../recentAct/Recent";
 
 function ProjectDash() {
-  const projectId=JSON.parse(localStorage.getItem("projectId"))
+  const projectId = JSON.parse(localStorage.getItem("projectId"));
   const [projects, setProjects] = useState([]);
+
   useEffect(() => {
     getData();
   }, []);
 
   const getData = () => {
-    axios.get("http://localhost:8080/user/").then((res) => {
+    axios.get("").then((res) => {
       console.log(res.data);
       const data = res.data;
       setProjects(data);
     });
   };
   return (
-    <Box  w="100%" bg="#f6f6f7">
-      <Heading fontSize={"sm"} m="10px 10px 0px 0px">Recent and pinned projects</Heading>
+    <Box w="100%" bg="#f6f6f7">
+      <Heading fontSize={"sm"} m="10px 10px 0px 0px">
+        Recent and pinned projects
+      </Heading>
       <Wrap p="30px" spacing="30px">
         {projects.map((ele) => (
           <Flex
@@ -70,7 +73,7 @@ function ProjectDash() {
           >
             <Flex gap="5px">
               <Box
-                background={ele.color}
+                background={ele.singColor}
                 w="30px"
                 h="30px"
                 pt="4px"
@@ -81,10 +84,10 @@ function ProjectDash() {
               </Box>
               <VStack h="40px" alignItems="left">
                 <Heading fontSize={"xs"} textAlign="left">
-                  {ele.title}
+                  {ele.projectName}
                 </Heading>
                 <Text fontSize={"xs"} textAlign="left">
-                  {ele.name}
+                  {ele.client}
                 </Text>
               </VStack>
             </Flex>
@@ -162,6 +165,7 @@ function ProjectDash() {
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
                       mb="10px"
+                      color={"red"}
                     >
                       <Icon as={RiDeleteBin6Line} />
                       <Text fontSize={"sm"}>Delete</Text>
@@ -173,7 +177,7 @@ function ProjectDash() {
           </Flex>
         ))}
       </Wrap>
-      <Recent/>
+      <Recent />
     </Box>
   );
 }
