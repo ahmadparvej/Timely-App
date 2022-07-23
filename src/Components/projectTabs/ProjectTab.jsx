@@ -19,9 +19,9 @@ import {
 import ProjectDash from "../projectDash/ProjectDash";
 function ProjectTab() {
   return (
-    <Box>
-      <Tabs variant="enclosed" border="1px solid black">
-        <TabList color="black" border="1px solid red">
+    <Box bg="#f6f6f7" >
+      <Tabs variant="enclosed" >
+        <TabList color="black" >
           <Tab>Dashboard</Tab>
           <Tab>All Projects</Tab>
         </TabList>
