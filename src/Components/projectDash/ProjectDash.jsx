@@ -55,6 +55,7 @@ function ProjectDash() {
       console.log(res.data);
       const data = res.data;
       setProjects(data);
+      console.log(data)
     });
   };
   return (

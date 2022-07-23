@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Box,
     Button,
@@ -51,8 +51,13 @@ export const NewProject = () => {
     const [colorData, setColorData] = useState(colors)
     const [singColor, setSingColor] = useState("#e57373");
     const [clientName, setClientName] = useState("")
+    const userId = JSON.parse(localStorage.getItem("userId"))
     const navigate=useNavigate();
 
+    useEffect(() => {
+     
+    }, [singColor])
+    
     const handleChange = (e) => {
         let { name, value } = e.target;
         console.log('value:', value)
@@ -60,15 +65,16 @@ export const NewProject = () => {
         setNewProject({
             ...newProject,
             [name]: value,
-            singColor
+           singColor
         })
         setClientName(value)
-        console.log('value:', value)
+       
     }
     const handleSubmit = () => {
+        newProject.singColor=singColor
         console.log(newProject);
         let payload=JSON.stringify(newProject);
-        fetch("http://localhost:8080/projects",{
+        fetch(`https://evening-castle-55317.herokuapp.com/user/62da35e81f868324ad0dcc06/projects`,{
             headers:{
                 "content-Type":"Application/json"
             },
@@ -76,7 +82,7 @@ export const NewProject = () => {
             body: payload
         })
         .then((res)=>res.json())
-        .then((data)=>navigate("/"))
+        .then((data)=>navigate("/projects"))
         .catch((err)=>console.log(err));
     }
 
@@ -114,7 +120,7 @@ export const NewProject = () => {
                             <GridItem colSpan={3}>
                                 <FormControl>
                                     <FormLabel color="gray" fontWeight="normal">PROJECT NAME</FormLabel>
-                                    <Input placeholder='Project name' name='projectname' onChange={handleChange}></Input>
+                                    <Input placeholder='Project name' name='projectName' onChange={handleChange}></Input>
                                 </FormControl>
                             </GridItem>
                             <GridItem colSpan={1}>
@@ -147,7 +153,7 @@ export const NewProject = () => {
                                                                 size="sm"
                                                                 mr="5px"
                                                                 mb="5px"
-                                                                onClick={() => setSingColor(color)}
+                                                                onClick={() => { setSingColor(color); console.log(singColor) }}
                                                                 borderRadius="50px"
                                                                 bg={color}
                                                                 _hover={color}
@@ -344,7 +350,6 @@ export const NewProject = () => {
                 </Box>
             </Box>
         </Box>
-      </Box>
-    </Box>
+     
   );
 };
