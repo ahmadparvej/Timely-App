@@ -12,28 +12,28 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
+import { useState } from 'react';
 
 
-  import style from "./signup.module.css"
-  import { useState } from 'react';
+  import style from "../signup/signup.module.css"
+
  
   
-  export default function SimpleCard({setNext}) {
-
+  export default function SimpleCard() {
     const [user, setUser] = useState({})
 
-    
-     const handlechange = (e) => {
+  
+    const handleChange = (e) => {
         let {name, value} = e.target
         setUser( {
             ...user,
             [name] : value
         })
     }
-    
-     const handleSubmit = () => {
+
+    const handleSubmit = () => {
         let payload = JSON.stringify(user)
-        fetch("https://mytimelyapp.herokuapp.com/auth/signup", {
+        fetch("https://mytimelyapp.herokuapp.com/auth/login", {
             headers : {
                 "Content-Type" : "application/json"
             },
@@ -41,11 +41,23 @@ import {
             body : payload
         })
         .then((res) => res.json())
-        .then((res) =>    setNext(true))
+        .then((res) => {
+            console.log(res._id)
+            console.log(res.name)
+                localStorage.setItem("userid", JSON.stringify(res._id))
+               
+                console.log(res.message)
+              
+          
+              
+        
+        })
         .catch((err) => console.log(err))
     }
+    
+    
 
-    // *****************************************************//
+
     return (
       <Flex
         minH={'100vh'}
@@ -54,9 +66,9 @@ import {
        >
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
-            <Heading fontSize={'5xl'} color={"grey"}>Sign up to Timely</Heading>
+            <Heading fontSize={'5xl'} color={"grey"}>Login to Timely</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-            Already have an account? <Link color={'green.400'}> Log In</Link> ✌️
+            Register here <Link color={'green.400'}> Sign Up</Link> ✌️
             </Text>
           </Stack>
           <Box 
@@ -76,24 +88,18 @@ import {
                   </FormControl>
               <FormControl id="email" >
                 <FormLabel> Work Email</FormLabel>
-                <Input type="email" name="email" onChange={ handlechange} isRequired="true" />
+                <Input type="email" name="email" isRequired="true" onChange={handleChange} />
               </FormControl>
-              <FormControl id="name">
-                <FormLabel> Full Name</FormLabel>
-                <Input type="text" name="name" onChange={handlechange}  isRequired="true" />
-              </FormControl>
-              <FormControl id="password">
-                <FormLabel>Password</FormLabel>
-                <Input type="password" name="password" onChange={handlechange}  isRequired="true"/>
-              </FormControl>
+           
+           
               <Stack spacing={10}>
-              <Stack align={'center'}>
+              {/* <Stack align={'center'}>
          
             <Text fontSize={'lg'} color={'gray.600'}>
             By signing up you agree to the <Link color={'green.400'}> Terms of Service.</Link> 
             </Text>
-          </Stack>
-                <Button  onClick={handleSubmit}
+          </Stack> */}
+                <Button onClick={handleSubmit}
                   bg={'blue.400'}
                   color={'white'}
                   _hover={{

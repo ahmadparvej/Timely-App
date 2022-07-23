@@ -2,6 +2,7 @@ import Project from "./Components/projectsNav/Project";
 import Sidebar from "./Components/Sidebar.tsx";
 import { Box, ControlBox, Flex } from "@chakra-ui/react";
 import Freetrial from "./Components/signup/Freetrial";
+import Login from "./Components/login/Login";
 import { Routes, Route, Link } from "react-router-dom";
 import { Dashboard } from './Components/dashboard/Dashboard';
 import { Tasks } from './Components/Tasks/Tasks';
@@ -24,6 +25,8 @@ function App() {
         </Routes>
       </Flex>
       <Freetrial />
+      <Login/>
+     
     </Box>
   );
 }
