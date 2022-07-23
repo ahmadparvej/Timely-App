@@ -13,12 +13,13 @@ import { Reports } from "./Components/reports/Reports";
 import { Invoices } from "./Components/invoices/Invoices";
 import { NewProject } from "./Components/NewProject/NewProject";
 import HomePart1 from "./Components/HomePage/HomePart1";
-
+import Navbar from "./Components/Navbar/Navbar.tsx";
 
 function App() {
   return (
     <Box>
       <Box>
+        <Navbar/>
          <HomePart1/>
       </Box>
       <Flex>
@@ -35,7 +36,7 @@ function App() {
       </Flex> 
       <Freetrial />
       <Login/>
-     
+
     </Box>
   );
 }
