@@ -16,6 +16,8 @@ import {
   Button,
   Stack,
   Icon,
+  VStack,
+  HStack,
 } from "@chakra-ui/react";
 import {
   Popover,
@@ -38,45 +40,57 @@ import { FaArchive } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 import axios from "axios";
+import Recent from "../recentAct/Recent";
 
 function ProjectDash() {
+  const projectId = JSON.parse(localStorage.getItem("projectId"));
   const [projects, setProjects] = useState([]);
+
   useEffect(() => {
     getData();
   }, []);
 
   const getData = () => {
-    axios.get("http://localhost:6060/projects").then((res) => {
+    axios.get("https://evening-castle-55317.herokuapp.com/user/projects").then((res) => {
       console.log(res.data);
       const data = res.data;
       setProjects(data);
     });
   };
   return (
-    <Box border="1px solid blue" w="100%">
-      <Text>Recent and pinned projects</Text>
-      <Wrap>
-        {projects.map((ele) => (
+    <Box w="100%" bg="#f6f6f7">
+      <Heading fontSize={"sm"} m="10px 10px 0px 0px">
+        Recent and pinned projects
+      </Heading>
+      <Wrap p="30px" spacing="30px">
+        {projects.map((ele,i) => (
           <Flex
-            w="200px"
-            border="1px solid black"
+            w="300px"
+            h="90px"
             justifyContent={"space-between"}
-            p="15px"
+            p="30px"
+            bg="white"
+            key={i}
           >
             <Flex gap="5px">
               <Box
-                background={ele.color}
+                background={ele.singColor}
                 w="30px"
-                h="25px"
+                h="30px"
+                pt="4px"
                 textAlign={"center"}
                 borderRadius="5px"
               >
                 <Icon as={IoMdBriefcase} color="white" />
               </Box>
-              <Box>
-                <Heading fontSize={"xs"}>{ele.title}</Heading>
-                <Text fontSize={"xs"}>{ele.name}</Text>
-              </Box>
+              <VStack h="40px" alignItems="left">
+                <Heading fontSize={"xs"} textAlign="left">
+                  {ele.projectName}
+                </Heading>
+                <Text fontSize={"xs"} textAlign="left">
+                  {ele.client}
+                </Text>
+              </VStack>
             </Flex>
 
             <Box>
@@ -94,7 +108,12 @@ function ProjectDash() {
                     <Icon as={BsThreeDots} />
                   </Box>
                 </PopoverTrigger>
-                <PopoverContent bg="white" color="black" w="auto">
+                <PopoverContent
+                  bg="white"
+                  color="black"
+                  w="auto"
+                  boxShadow="base"
+                >
                   {/* <PopoverHeader fontWeight="semibold">
                     Customization
                   </PopoverHeader> */}
@@ -106,8 +125,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
-                      
+                      mb="10px"
                     >
                       <Icon as={GoPin} />
                       <Text fontSize={"sm"}>Pin to dashboard</Text>
@@ -117,7 +135,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
                     >
                       <Icon as={GrEdit} />
                       <Text fontSize={"sm"}>Edit</Text>
@@ -127,7 +145,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
                     >
                       <Icon as={IoIosCopy} />
                       <Text fontSize={"sm"}>Duplicate</Text>
@@ -137,7 +155,7 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
                     >
                       <Icon as={FaArchive} />
                       <Text fontSize={"sm"}>Archive</Text>
@@ -147,7 +165,8 @@ function ProjectDash() {
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
-                       mb="10px"
+                      mb="10px"
+                      color={"red"}
                     >
                       <Icon as={RiDeleteBin6Line} />
                       <Text fontSize={"sm"}>Delete</Text>
@@ -159,6 +178,7 @@ function ProjectDash() {
           </Flex>
         ))}
       </Wrap>
+      <Recent />
     </Box>
   );
 }
