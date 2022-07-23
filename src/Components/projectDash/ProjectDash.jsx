@@ -51,7 +51,7 @@ function ProjectDash() {
   }, []);
 
   const getData = () => {
-    axios.get("").then((res) => {
+    axios.get("https://evening-castle-55317.herokuapp.com/user/projects").then((res) => {
       console.log(res.data);
       const data = res.data;
       setProjects(data);
@@ -63,13 +63,14 @@ function ProjectDash() {
         Recent and pinned projects
       </Heading>
       <Wrap p="30px" spacing="30px">
-        {projects.map((ele) => (
+        {projects.map((ele,i) => (
           <Flex
             w="300px"
             h="90px"
             justifyContent={"space-between"}
             p="30px"
             bg="white"
+            key={i}
           >
             <Flex gap="5px">
               <Box
