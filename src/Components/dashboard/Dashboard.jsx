@@ -1,16 +1,5 @@
-import React from "react";
-import {
-  Stack,
-  Text,
-  Flex,
-  HStack,
-  VStack,
-  Box,
-  Heading,
-  Button,
-  Icon
-} from "@chakra-ui/react";
-import { Input } from "@chakra-ui/react";
+import React,{useState} from "react";
+import { Stack, Text, Flex, HStack, VStack, Box, Heading, Button, Icon, Input} from "@chakra-ui/react";
 
 import { BsFillInfoCircleFill } from "react-icons/bs";
 
@@ -18,6 +7,12 @@ import { ProfileMenu } from "./ProfileMenu";
 import { AddProjectModal } from './AddProjectModal';
 
 export const Dashboard = () => {
+  const [tasks, setTasks] = useState([])
+
+  const handleTasks=(newTask)=>{
+    setTasks([...tasks,newTask])
+  }
+  console.log(tasks);
   return (
     <Stack w="90%" m="1rem" gap="1rem">
       <Flex minWidth="max-content" justifyContent="space-between">
@@ -63,7 +58,17 @@ export const Dashboard = () => {
           <Heading as="h4" size="md">0h</Heading>
           </Stack>
           <Stack p="1rem">
-          <AddProjectModal/>
+          {tasks.map((el)=>{
+            return <Box bg="#f2f2f2" p="8px" borderRadius="5px">
+              <Stack bg={el.color} p="8px" borderRadius="5px" color="white">
+                <Heading as="h4" size="sm">{el.title}</Heading>
+                <Heading as="h4" size="xs">{el.selectProject}</Heading>
+                <Heading as="h4" size="xs">${el.rate}</Heading>
+              </Stack>
+              <Text color="grey">No memories</Text>
+            </Box>
+          })}
+          <AddProjectModal handleTasks={handleTasks}/>
           </Stack>
         </Stack>
         <Stack
