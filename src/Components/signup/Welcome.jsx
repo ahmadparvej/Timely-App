@@ -2,7 +2,7 @@ import React from 'react'
 
 const welcome = () => {
   return (
-    <div>welcome</div>
+    <div style={{textAlign:"center"}}> welcome</div>
   )
 }
 
