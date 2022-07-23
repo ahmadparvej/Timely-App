@@ -18,7 +18,7 @@ function App() {
     <Box>
       <Box>
         <Navbar/>
-         <HomePart1/>
+        <HomePart1/>
       </Box>
       {/* <Flex>
         <Sidebar />

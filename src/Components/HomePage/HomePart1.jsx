@@ -171,15 +171,118 @@ const HomePart1 = () => {
             </div>
           </div>
         </div>
-        {/* <div className={styles.connectyourstack}>
+        <div className={styles.connectyourstack}>
           <div className={styles.connectyourstack2}>
             <div className={styles.connectyourstack3}>
+              <img
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/625c168b07e04cf345cd2b3d_tm-arrow-wh.svg"
+                alt=""
+              />
+              <h3>Connect your stack</h3>
+              <p>
+                Timely’s native integrations and open APIs let you easily
+                connect data across you existing digital toolkit. Enjoy modern,
+                automatic time tracking without changing workflows you’ve spent
+                years perfecting.
+              </p>
               <div className={styles.connectyourstack4}>
-                <p>kiran</p>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a399507178afec0_622f69e00c9cf281783c6e63_60b773d26388125af692655e_zoom.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a3995db068afecb_622f69e00c9cf2a3aa3c6e5c_60b773d26388128ce29265e3_zapier.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a3995d48d8afec2_622f69e00c9cf228763c6e5f_60b773d263881212a3926561_trello.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a39959cb08b0389_622f69e00c9cf20e073c75c5_toggl.svg"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a399551b88afec9_622f69e00c9cf211c53c6e61_60b773d26388125fe3926566_todois.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a39952c128afec1_622f69e00c9cf20fcd3c6e5d_60b773d2638812c090926634_quickbooks_logo.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a3995f1728afec3_622f69e00c9cf219633c6e62_60b773d26388126112926555_outlook.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a3995366e8afec5_622f69e00c9cf23dd63c6e5b_60b773d2638812391092655c_office365.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a39955cba8afec8_622f69e00c9cf266013c6e5e_60b773d263881204bd92656c_jira.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a399594708afead_622f69e00c9cf215b73c6e44_60b773d2638812a08e92656f_harvest.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a399543808afeae_622f69e00c9cf22e8d3c6e48_60b773d26388128342926559_calendar.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a399530e28afebb_622f69e00c9cf223073c6e4c_60b773d2638812105d926556_gmail.png"
+                    alt=""
+                  />
+                </Link>
+                </div>
+                <div className={styles.connectyourstack5}>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a399545b18afea6_622f69e00c9cf271b93c6e46_60b773d26388129bba926569_github.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a39954a888afeac_622f69e00c9cf27e7c3c6e43_60b773d263881215e6926573_azuread.png"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"/"}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a399501d48af28d/6257f2528a399535d98afeaf_622f69e00c9cf262c83c6e47_60b773d2638812deaf926564_asana.png"
+                    alt=""
+                  />
+                </Link>
               </div>
+              <Link to="/">See Integrations</Link>
             </div>
           </div>
-        </div> */}
+        </div>
         <div className={styles.trusted}>
           <div className={styles.trusted1}>
             <div className={styles.trusted12}>
@@ -295,7 +398,9 @@ const HomePart1 = () => {
         </div>
         <div className={styles.try}>
           <div className={styles.try1}>
-            <h2>Try <span>Timely</span> for free!</h2>
+            <h2>
+              Try <span>Timely</span> for free!
+            </h2>
             <p>
               Discover the power of Timely's automated time tracking with a
               14-day free trial
@@ -341,9 +446,9 @@ const HomePart1 = () => {
             </div>
           </div>
           <div className={styles.try3}>
-              <p>20 people or more? </p>
-              <Link to="/"> Get a personalized introduction to Timely</Link>
-            </div>
+            <p>20 people or more? </p>
+            <Link to="/"> Get a personalized introduction to Timely</Link>
+          </div>
         </div>
       </div>
     </div>
