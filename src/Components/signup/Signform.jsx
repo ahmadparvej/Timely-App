@@ -16,12 +16,13 @@ import {
 
   import style from "./signup.module.css"
   import { useState } from 'react';
- 
+ import { useNavigate } from 'react-router-dom';
+
   
-  export default function SimpleCard({setNext}) {
+  export default function SimpleCard() {
 
     const [user, setUser] = useState({})
-
+    const navigate = useNavigate()
     
      const handlechange = (e) => {
         let {name, value} = e.target
@@ -33,7 +34,7 @@ import {
     
      const handleSubmit = () => {
         let payload = JSON.stringify(user)
-        fetch("https://mytimelyapp.herokuapp.com/auth/signup", {
+        fetch("https://evening-castle-55317.herokuapp.com/auth/signup", {
             headers : {
                 "Content-Type" : "application/json"
             },
@@ -41,7 +42,7 @@ import {
             body : payload
         })
         .then((res) => res.json())
-        .then((res) =>    setNext(true))
+        .then((res) => navigate('/welcome'))
         .catch((err) => console.log(err))
     }
 

@@ -1,8 +1,10 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
 import styles from "./Footer.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Footer1 = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.footer}>
       <div className={styles.footer1}>

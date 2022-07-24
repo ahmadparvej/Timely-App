@@ -13,27 +13,27 @@ import { Peoples } from "./Components/people/Peoples";
 import { Reports } from "./Components/reports/Reports";
 import { Invoices } from "./Components/invoices/Invoices";
 import { NewProject } from "./Components/NewProject/NewProject";
-import { SidebarOverlay } from './Components/SidebarOverlay';
-
+import { SidebarOverlay } from "./Components/SidebarOverlay";
+import HomePage from "./Components/HomePage/HomePage.jsx";
 
 function App() {
   return (
     <Box>
-      <Welcome/>
-        <Routes>
-          <Route path="/login" element={<Freetrial/>}/>
-          <Route path="/login" element={<Freetrial/>}/>
-          <Route path="dashboard" element={<SidebarOverlay/>}>
-            <Route path="hours" element={<Dashboard/>} />
-            <Route path="tasks" element={<Tasks/>} />
-            <Route path="projects" element={<ProjectPage/>} />
-            <Route path="peoples" element={<Peoples/>} />
-            <Route path="reports" element={<Reports/>} />
-            <Route path="invoices" element={<Invoices/>} />
-          </Route>
-          
-        </Routes>
-
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/freetrial" element={<Freetrial />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="dashboard" element={<SidebarOverlay />}>
+          <Route path="" element={<Dashboard />} />
+          <Route path="hours" element={<Dashboard />} />
+          <Route path="tasks" element={<Tasks />} />
+          <Route path="projects" element={<ProjectPage />} />
+          <Route path="peoples" element={<Peoples />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="invoices" element={<Invoices />} />
+        </Route>
+      </Routes>
     </Box>
   );
 }

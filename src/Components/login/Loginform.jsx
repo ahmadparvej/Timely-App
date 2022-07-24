@@ -16,13 +16,14 @@ import { useState } from 'react';
 
 
   import style from "../signup/signup.module.css"
+import { useNavigate } from 'react-router-dom';
 
  
   
   export default function SimpleCard() {
     const [user, setUser] = useState({})
 
-  
+    const navigate = useNavigate();
     const handleChange = (e) => {
         let {name, value} = e.target
         setUser( {
@@ -32,8 +33,9 @@ import { useState } from 'react';
     }
 
     const handleSubmit = () => {
+
         let payload = JSON.stringify(user)
-        fetch("https://mytimelyapp.herokuapp.com/auth/login", {
+        fetch("https://evening-castle-55317.herokuapp.com/auth/login", {
             headers : {
                 "Content-Type" : "application/json"
             },
@@ -42,15 +44,8 @@ import { useState } from 'react';
         })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res._id)
-            console.log(res.name)
                 localStorage.setItem("userid", JSON.stringify(res._id))
-               
-                console.log(res.message)
-              
-          
-              
-        
+                navigate("/dashboard")
         })
         .catch((err) => console.log(err))
     }

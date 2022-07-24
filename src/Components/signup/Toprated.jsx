@@ -4,7 +4,7 @@ import SimpleCard from './Signform'
 import style from "./signup.module.css"
 
 
-const Toprated = ({setNext}) => {
+const Toprated = () => {
 
   return (
     <div>
@@ -48,7 +48,7 @@ const Toprated = ({setNext}) => {
             </div>
             {/* *********** */}
             <div className={style.formdiv}>
-                <SimpleCard setNext={setNext}/>
+                <SimpleCard/>
             </div>
         </div>
         <div className={style.copyright}><p>Copyright 2022 Memory AS</p></div>

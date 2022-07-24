@@ -13,8 +13,10 @@ import {
    
   } from "@chakra-ui/react";
   import { Search2Icon,InfoIcon,ArrowForwardIcon} from '@chakra-ui/icons'
+import { useNavigate } from 'react-router-dom';
 
 const Welcome = () => {
+  const navigate = useNavigate();
   return (
     <div className='main'>
       <div>
@@ -51,7 +53,9 @@ const Welcome = () => {
                   _hover={{
                     bg: 'green.500',
                     w:"80%"
-                  }}>
+                  }}
+                  onClick={()=>navigate("/dashboard")}
+                  >
                Next{<ArrowForwardIcon  />}
                 </Button>
               </Stack>
@@ -64,7 +68,6 @@ const Welcome = () => {
         <img className="welimg" src="https://dou6see51s3xi.cloudfront.net/images/workspace_details-aea830517eac51ebac8d1d5a00f35f1d.png"
         />
            <div className="center">shristi</div>
-      <div>absc</div>
       </div>
     </div>
   )

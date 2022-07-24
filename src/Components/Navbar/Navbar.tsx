@@ -90,8 +90,7 @@ export default function WithSubnavigation() {
         color={"black"}
         fontWeight={500}
         variant={"solid"}
-        href={"#"}
-        // onClick={() => navigate("/login")}
+        onClick={() => navigate("/freetrial")}
       >
         Start 14-day free trial
       </Button>
@@ -121,7 +120,7 @@ const DesktopNav = () => {
   const linkColor = useColorModeValue("white", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
-
+  const navigate = useNavigate();
   return (
     <Stack direction={"row"} w={"750px"} h={"40px"}spacing={4} ml={"80px"} mt={"25px"}>
       {NAV_ITEMS.map((navItem) => (
@@ -168,7 +167,6 @@ const DesktopNav = () => {
       ))}
       <Button
         pb={"15px"}
-        // mr={"15px"}
         height="40px"
         width="80px"
         as={"a"}
@@ -176,8 +174,7 @@ const DesktopNav = () => {
         color={"white"}
         fontWeight={500}
         variant={"link"}
-        href={"#"}
-        // onClick={() => navigate("/login")}
+        onClick={()=> navigate("/login")}
       >
         <ArrowRightIcon h={"11px"} mr={"3px"} />
         Log in

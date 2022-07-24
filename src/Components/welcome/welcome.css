@@ -1,15 +1,10 @@
 .main{
-   border:1px solid black;
    height:600px;
    display:flex;
- 
-
-
 }
 .main>:nth-child(1){
     width:40%;
-    background-color: whitesmoke
-
+    background-color: whitesmoke;
 }
 .main>:nth-child(2){
     width:60%;
@@ -19,14 +14,12 @@
     flex-grow: 1;
     justify-content: center;
     position:relative
- 
 }
 .main>div{
     /* border:1px solid red */
 }
 .welimg{
     width:80%;
-
 }
 .center{
     position: absolute;
