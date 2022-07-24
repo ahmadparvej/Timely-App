@@ -15,24 +15,7 @@ import HomePart1 from "./Components/HomePage/HomePart1";
 function App() {
   return (
     <Box>
-      <Box>
-         <HomePart1/>
-        
-      </Box>
-      <Flex>
-        <Sidebar />
-        <Routes>
-          <Route path="/hours" element={<Dashboard/>} />
-          <Route path="/tasks" element={<Tasks/>} />
-          <Route path="/projects" element={<ProjectPage/>} />
-          <Route path="/peoples" element={<Peoples/>} />
-          <Route path="/reports" element={<Reports/>} />
-          <Route path="/invoices" element={<Invoices/>} />
-        </Routes>
-      </Flex> 
-      <Flex>
-      <Freetrial />
-      </Flex>
+     
      
       <Welcome/>
     </Box>
