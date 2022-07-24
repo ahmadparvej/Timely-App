@@ -13,15 +13,14 @@ import { Peoples } from "./Components/people/Peoples";
 import { Reports } from "./Components/reports/Reports";
 import { Invoices } from "./Components/invoices/Invoices";
 import { NewProject } from "./Components/NewProject/NewProject";
-import HomePart1 from "./Components/HomePage/HomePart1";
 import { SidebarOverlay } from './Components/SidebarOverlay';
-import Navbar from "./Components/Navbar/Navbar.tsx";
+
 
 function App() {
   return (
     <Box>
+      <Welcome/>
         <Routes>
-          <Route path="/" element={<HomePart1/>}/>
           <Route path="/login" element={<Freetrial/>}/>
           <Route path="/login" element={<Freetrial/>}/>
           <Route path="dashboard" element={<SidebarOverlay/>}>
@@ -34,6 +33,7 @@ function App() {
           </Route>
           
         </Routes>
+
     </Box>
   );
 }
