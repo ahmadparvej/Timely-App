@@ -73,14 +73,14 @@ import {
                 
                 <button className={style.buttn}><img src="https://d1vbcromo72rmd.cloudfront.net/assets/left-black-logo-large-be9b8d1a6be1718debaab0c55cd606338e2724b4ca71f2d0266f9d3df13fc996.svg"/><div>Sign up with Apple</div></button>
                 
-                  </FormControl>
-              <FormControl id="email" >
-                <FormLabel> Work Email</FormLabel>
-                <Input type="email" name="email" onChange={ handlechange} isRequired="true" />
-              </FormControl>
+                  </FormControl>        
               <FormControl id="name">
                 <FormLabel> Full Name</FormLabel>
                 <Input type="text" name="name" onChange={handlechange}  isRequired="true" />
+              </FormControl>
+              <FormControl id="email" >
+                <FormLabel> Work Email</FormLabel>
+                <Input type="email" name="email" onChange={ handlechange}  />
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>

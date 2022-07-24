@@ -1,7 +1,7 @@
 import React from 'react'
 import Toprated from './Toprated'
 import {useState} from 'react'
-import Welcome from './Welcome'
+import Welcome from '../welcome/Welcome'
 
 
 const Freetrial = () => {

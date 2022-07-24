@@ -1,6 +1,7 @@
 import Sidebar from "./Components/Sidebar.tsx";
 import { Box, ControlBox, Flex } from "@chakra-ui/react";
 import Freetrial from "./Components/signup/Freetrial";
+import Welcome from "./Components/welcome/Welcome";
 import Login from "./Components/login/Login";
 import ProjectPage from "./Components/projectpage/ProjectPage";
 
@@ -19,6 +20,7 @@ import Navbar from "./Components/Navbar/Navbar.tsx";
 function App() {
   return (
     <Box>
+      <Welcome/>
         <Routes>
           <Route path="/" element={<HomePart1/>}/>
           <Route path="/login" element={<Freetrial/>}/>
