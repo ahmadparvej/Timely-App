@@ -30,6 +30,7 @@ import {
   PopoverCloseButton,
   PopoverAnchor,
 } from "@chakra-ui/react";
+import {BackdropExample} from "./Overlay"
 import { IoMdBriefcase } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 
@@ -42,8 +43,17 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 import Recent from "../recentAct/Recent";
 
+function handleClickDelete(e){
+console.log(e)
+}
+
+function handleEdit(ele) {
+  const projectId= ele._id
+  axios.patch(
+    `https://evening-castle-55317.herokuapp.com/user/:${projectId}`
+  );
+}
 function ProjectDash() {
-  const projectId = JSON.parse(localStorage.getItem("projectId"));
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -55,6 +65,7 @@ function ProjectDash() {
       console.log(res.data);
       const data = res.data;
       setProjects(data);
+      console.log(data)
     });
   };
   return (
@@ -80,6 +91,7 @@ function ProjectDash() {
                 pt="4px"
                 textAlign={"center"}
                 borderRadius="5px"
+                
               >
                 <Icon as={IoMdBriefcase} color="white" />
               </Box>
@@ -114,9 +126,7 @@ function ProjectDash() {
                   w="auto"
                   boxShadow="base"
                 >
-                  {/* <PopoverHeader fontWeight="semibold">
-                    Customization
-                  </PopoverHeader> */}
+                 
                   <PopoverArrow bg="white" />
                   <PopoverCloseButton bg="white" />
                   <PopoverBody pt="25px">
@@ -138,7 +148,7 @@ function ProjectDash() {
                       mb="10px"
                     >
                       <Icon as={GrEdit} />
-                      <Text fontSize={"sm"}>Edit</Text>
+                      <Text fontSize={"sm"} onClick={(ele)=>{handleEdit(ele)}} >Edit</Text>
                     </Flex>
                     <Flex
                       pb="2px"
@@ -160,17 +170,8 @@ function ProjectDash() {
                       <Icon as={FaArchive} />
                       <Text fontSize={"sm"}>Archive</Text>
                     </Flex>
-                    <Flex
-                      pb="2px"
-                      gap="5px"
-                      _hover={{ background: "whitesmoke" }}
-                      alignItems={"center"}
-                      mb="10px"
-                      color={"red"}
-                    >
-                      <Icon as={RiDeleteBin6Line} />
-                      <Text fontSize={"sm"}>Delete</Text>
-                    </Flex>
+                 
+                    <BackdropExample ele={ele} getData={getData} />
                   </PopoverBody>
                 </PopoverContent>
               </Popover>
