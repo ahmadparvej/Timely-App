@@ -344,7 +344,5 @@ export const NewProject = () => {
                 </Box>
             </Box>
         </Box>
-      </Box>
-    </Box>
   );
 };

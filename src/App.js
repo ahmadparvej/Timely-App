@@ -20,9 +20,9 @@ import Navbar from "./Components/Navbar/Navbar.tsx";
 function App() {
   return (
     <Box>
-      <Welcome/>
         <Routes>
           <Route path="/" element={<HomePart1/>}/>
+          <Route path="/login" element={<Freetrial/>}/>
           <Route path="/login" element={<Freetrial/>}/>
           <Route path="dashboard" element={<SidebarOverlay/>}>
             <Route path="hours" element={<Dashboard/>} />
