@@ -82,7 +82,7 @@ export const NewProject = () => {
             body: payload
         })
         .then((res)=>res.json())
-        .then((data)=>navigate("/projects"))
+        .then((data)=>navigate("/dashboard/projects"))
         .catch((err)=>console.log(err));
     }
 
@@ -98,7 +98,7 @@ export const NewProject = () => {
               colorScheme="gray"
               color="grey"
               borderWidth="3px"
-              onClick={()=>navigate("/projects")}
+              onClick={()=>navigate("/dashboard/projects")}
             >
               <Icon as={BiLeftArrowAlt} />
               Back

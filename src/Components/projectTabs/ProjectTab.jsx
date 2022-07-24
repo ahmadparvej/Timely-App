@@ -23,14 +23,14 @@ function ProjectTab() {
       <Tabs variant="enclosed" >
         <TabList color="black" >
           <Tab>Dashboard</Tab>
-          <Tab>All Projects</Tab>
+          <Tab _isDisabled="true">All Projects</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
            <ProjectDash/>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <p>All Projects!</p>
           </TabPanel>
         </TabPanels>
       </Tabs>

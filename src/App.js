@@ -24,6 +24,8 @@ function App() {
         <Route path="/freetrial" element={<Freetrial />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/new" element={<NewProject />} />
+
         <Route path="dashboard" element={<SidebarOverlay />}>
           <Route path="" element={<Dashboard />} />
           <Route path="hours" element={<Dashboard />} />
