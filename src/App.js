@@ -13,30 +13,25 @@ import { Reports } from "./Components/reports/Reports";
 import { Invoices } from "./Components/invoices/Invoices";
 import { NewProject } from "./Components/NewProject/NewProject";
 import HomePart1 from "./Components/HomePage/HomePart1";
+import { SidebarOverlay } from './Components/SidebarOverlay';
 import Navbar from "./Components/Navbar/Navbar.tsx";
 
 function App() {
   return (
     <Box>
-      <Box>
-        <Navbar/>
-         <HomePart1/>
-      </Box>
-      <Flex>
-        <Sidebar />
         <Routes>
-          <Route path="/hours" element={<Dashboard />} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/projects" element={<ProjectPage />} />
-          <Route path="/peoples" element={<Peoples />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/invoices" element={<Invoices />} />
-          <Route path="/new" element={<NewProject />} />
+          <Route path="/" element={<HomePart1/>}/>
+          <Route path="/login" element={<Freetrial/>}/>
+          <Route path="dashboard" element={<SidebarOverlay/>}>
+            <Route path="hours" element={<Dashboard/>} />
+            <Route path="tasks" element={<Tasks/>} />
+            <Route path="projects" element={<ProjectPage/>} />
+            <Route path="peoples" element={<Peoples/>} />
+            <Route path="reports" element={<Reports/>} />
+            <Route path="invoices" element={<Invoices/>} />
+          </Route>
+          
         </Routes>
-      </Flex> 
-      <Freetrial />
-      <Login/>
-
     </Box>
   );
 }
