@@ -24,7 +24,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
   ArrowRightIcon,
-  StarIcon
+  StarIcon,
 } from "@chakra-ui/icons";
 import { Image } from "@chakra-ui/react";
 
@@ -33,14 +33,15 @@ export default function WithSubnavigation() {
   const navigate = useNavigate();
 
   return (
-    <Box>
+    <Box position={"fixed"} zIndex="100000" w={"100%"} >
       <Flex
+      
         bg={useColorModeValue("#722FD3", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
+        minH={"70px"}
         py={{ base: 2 }}
-        px={"10%"}
-        borderBottom={1}
+        px={"5%"}
+        borderBottom={0}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
@@ -61,7 +62,7 @@ export default function WithSubnavigation() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Image
-           width={{ md: 40 }}
+            width={{ md: 40 }}
             w={"84px"}
             h={"55px"}
             src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/6257f2528a39955aef8af720_timely-new-logo.svg"
@@ -79,51 +80,34 @@ export default function WithSubnavigation() {
             <DesktopNav />
           </Flex>
         </Flex>
-
         <Button
-            mt={"15px"}
-            mr={"15px"}
-            height="40px"
-            width="80px"
-            as={"a"}
-            fontSize={"sm"}
-            color={"white"}
-            fontWeight={500}
-            variant={"link"}
-            href={"#"}
-            onClick={() => navigate("/login")}
-          >
-            <ArrowRightIcon h={"11px"} mr={"3px"} />
-            Log in
-          </Button>
-
-        <Stack
-        mt={"15px"}
+      mr={"20px"}
+        bg={"white"}
+        height="40px"
+        width="230px"
+        as={"a"}
+        fontSize={"sm"}
+        color={"black"}
+        fontWeight={500}
+        variant={"solid"}
+        href={"#"}
+        // onClick={() => navigate("/login")}
+      >
+        Start 14-day free trial
+      </Button>
+        {/* <Stack
+          mt={"15px"}
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
           spacing={4}
-        >
-          <Button
-            bg={"white"}
-            height="40px"
-            width="290px"
-            as={"a"}
-            fontSize={"sm"}
-            color={"black"}
-            fontWeight={500}
-            variant={"solid"}
-            href={"#"}
-            onClick={() => navigate("/login")}
-          >
-            Start 14-day free trial
-          </Button>
+        > */}
           <Image
             height="40px"
             width="100px"
             src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/6257f2528a399514908af72d_made-by-white.svg"
           />
-        </Stack>
+        {/* </Stack> */}
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -139,14 +123,14 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} w={"600px"}spacing={4} ml={"80px"} mt={"25px"}>
+    <Stack direction={"row"} w={"750px"} h={"40px"}spacing={4} ml={"80px"} mt={"25px"}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? "#"}
+                // href={navItem.href ?? "#"}
                 fontSize={"md"}
                 fontWeight={500}
                 color={linkColor}
@@ -162,15 +146,15 @@ const DesktopNav = () => {
 
             {navItem.children && (
               <PopoverContent
-              w='250px'
-              // bg='gray'
+                w="250px"
+                // bg='gray'
                 border={0}
                 boxShadow={"xl"}
                 bg={popoverContentBgColor}
                 p={4}
                 rounded={"xl"}
                 // minW={"sm"}
-                maxH={"300"}
+                maxH={"320"}
               >
                 <Stack>
                   {navItem.children.map((child) => (
@@ -182,6 +166,23 @@ const DesktopNav = () => {
           </Popover>
         </Box>
       ))}
+      <Button
+        pb={"15px"}
+        // mr={"15px"}
+        height="40px"
+        width="80px"
+        as={"a"}
+        fontSize={"sm"}
+        color={"white"}
+        fontWeight={500}
+        variant={"link"}
+        href={"#"}
+        // onClick={() => navigate("/login")}
+      >
+        <ArrowRightIcon h={"11px"} mr={"3px"} />
+        Log in
+      </Button>
+      
     </Stack>
   );
 };
@@ -196,14 +197,15 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       rounded={"md"}
       _hover={{ bg: useColorModeValue("#722FD3.50", "gray.900") }}
     >
-      <Stack direction={"row"} align={"center"} >
+      <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
             _groupHover={{ color: "#722FD3" }}
             fontWeight={500}
           >
-            <StarIcon/>{label}
+            <StarIcon />
+            {label}
           </Text>
           <Text fontSize={"sm"}>{subLabel}</Text>
         </Box>
@@ -269,11 +271,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         )}
       </Flex>
 
-      <Collapse
-        in={isOpen}
-        animateOpacity
-        // style={{ marginTop: '0!important' }}
-      >
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
         <Stack
           mt={2}
           pl={4}
@@ -308,21 +306,25 @@ const NAV_ITEMS: Array<NavItem> = [
     children: [
       {
         label: "Track time",
-        href: "#",
+        href: "https://timelyapp.com/features/automatic-time-tracking",
       },
       {
         label: "Track projects",
         href: "#",
-      },{
+      },
+      {
         label: "Track teams",
         href: "#",
-      },{
+      },
+      {
         label: "Track plans",
         href: "#",
-      },{
+      },
+      {
         label: "Integrations",
         href: "#",
-      },{
+      },
+      {
         label: "Our privacy promise",
         href: "#",
       },
@@ -338,36 +340,42 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Software companies",
         href: "#",
-      },{
+      },
+      {
         label: "Agencies",
-        href: "#",
-      },{
-        label: "Designers & creatives",
-        href: "#",
-      },{
-        label: "Lawyers",
-        href: "#",
-      },{
-        label: "Accountants",
         href: "#",
       },
       {
-        label: "Teams",
+        label: "Designers & creatives",
         href: "#",
-      },{
-        label: "Freelancers",
+      },
+      {
+        label: "Lawyers",
         href: "#",
-      },{
-        label: "Employees",
-        href: "#",
-      },{
-        label: "Project managers",
-        href: "#",
-      },{
-        label: "Remote workers",
+      },
+      {
+        label: "Accountants",
         href: "#",
       },
     ],
+    //   children: [
+    //   {
+    //     label: "Teams",
+    //     href: "#",
+    //   },{
+    //     label: "Freelancers",
+    //     href: "#",
+    //   },{
+    //     label: "Employees",
+    //     href: "#",
+    //   },{
+    //     label: "Project managers",
+    //     href: "#",
+    //   },{
+    //     label: "Remote workers",
+    //     href: "#",
+    //   },
+    // ],
   },
   {
     label: "Pricing",
@@ -379,20 +387,24 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Blog",
         href: "#",
-      },{
+      },
+      {
         label: "Cast studies",
         href: "#",
-      },{
+      },
+      {
         label: "Books",
         href: "#",
       },
       {
         label: "Webinars",
         href: "#",
-      },{
+      },
+      {
         label: "Time tracking guide",
         href: "#",
-      },{
+      },
+      {
         label: "Support",
         href: "#",
       },
@@ -402,4 +414,8 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Talk to sales",
     href: "#",
   },
+  // {
+  //   label: "Log in",
+  //   href: "#",
+  // },
 ];

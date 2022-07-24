@@ -12,15 +12,22 @@ import { Reports } from './Components/reports/Reports';
 import { Invoices } from './Components/invoices/Invoices';
 import HomePart1 from "./Components/HomePage/HomePart1";
 import Navbar from "./Components/Navbar/Navbar.tsx";
+import Footer1 from './Components/Footer/Footer1';
+import Footerlast from './Components/Footer/Footerlast'
+
+
 
 function App() {
   return (
     <Box>
-      <Box>
+      <div>
         <Navbar/>
         <HomePart1/>
-      </Box>
-      {/* <Flex>
+        <Footer1/>
+        <Footerlast/>
+      </div>
+         
+      <Flex>
         <Sidebar />
         <Routes>
           <Route path="/hours" element={<Dashboard/>} />
@@ -31,7 +38,7 @@ function App() {
           <Route path="/invoices" element={<Invoices/>} />
         </Routes>
       </Flex> 
-      <Freetrial /> */}
+      <Freetrial />
     </Box>
   );
 }
