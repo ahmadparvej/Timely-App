@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 
 import { Link } from "react-router-dom";
+import { IoMdBriefcase } from "react-icons/io";
 
 import { IconType } from 'react-icons';
 import {BsFillClockFill,BsFillBagFill, BsBarChartFill, BsFillArrowUpSquareFill} from "react-icons/bs"
@@ -30,7 +31,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: '', icon: BsFillArrowUpSquareFill },
   { name: 'hours', icon: BsFillClockFill },
   { name: 'tasks', icon: MdTask },
-  { name: 'projects', icon: BsFillBagFill },
+  { name: 'projects', icon: IoMdBriefcase },
   { name: 'peoples', icon: ImUser },
   { name: 'reports', icon: BsBarChartFill },
   { name: 'invoices', icon: AiFillDollarCircle },
@@ -82,6 +83,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       w={{ base: 'full', md: 20 }}
       pos="absolute"
       h="full"
+   
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
       <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
@@ -102,7 +104,7 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ icon, children, link, ...rest }: NavItemProps) => {
   return (
-    <Link to={link} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link to={link} style={{ textDecoration: 'none' }}>
       <Flex
         align="center"
         p="4"
