@@ -30,6 +30,7 @@ import {
   PopoverCloseButton,
   PopoverAnchor,
 } from "@chakra-ui/react";
+import {BackdropExample} from "./Overlay"
 import { IoMdBriefcase } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 
@@ -42,9 +43,13 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 import Recent from "../recentAct/Recent";
 
+function handleClickDelete(e){
+console.log(e)
+}
+
 function ProjectDash() {
-  const projectId = JSON.parse(localStorage.getItem("projectId"));
   const [projects, setProjects] = useState([]);
+  const projectId = JSON.parse(localStorage.getItem("projectId"));
 
   useEffect(() => {
     getData();
@@ -81,6 +86,7 @@ function ProjectDash() {
                 pt="4px"
                 textAlign={"center"}
                 borderRadius="5px"
+                
               >
                 <Icon as={IoMdBriefcase} color="white" />
               </Box>
@@ -161,17 +167,19 @@ function ProjectDash() {
                       <Icon as={FaArchive} />
                       <Text fontSize={"sm"}>Archive</Text>
                     </Flex>
-                    <Flex
+                    {/* <Flex
                       pb="2px"
                       gap="5px"
                       _hover={{ background: "whitesmoke" }}
                       alignItems={"center"}
                       mb="10px"
                       color={"red"}
+                      onClick={()=>BackdropExample()}
                     >
                       <Icon as={RiDeleteBin6Line} />
                       <Text fontSize={"sm"}>Delete</Text>
-                    </Flex>
+                    </Flex> */}
+                    <BackdropExample id={ele} />
                   </PopoverBody>
                 </PopoverContent>
               </Popover>
