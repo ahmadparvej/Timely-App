@@ -2,6 +2,7 @@
 import Sidebar from "./Components/Sidebar.tsx";
 import { Box, ControlBox, Flex } from "@chakra-ui/react";
 import Freetrial from "./Components/signup/Freetrial";
+import Welcome from "./Components/welcome/Welcome";
 import ProjectPage from "./Components/projectpage/ProjectPage";
 import { Routes, Route, Link } from "react-router-dom";
 import { Dashboard } from './Components/dashboard/Dashboard';
@@ -16,6 +17,7 @@ function App() {
     <Box>
       <Box>
          <HomePart1/>
+        
       </Box>
       <Flex>
         <Sidebar />
@@ -28,7 +30,11 @@ function App() {
           <Route path="/invoices" element={<Invoices/>} />
         </Routes>
       </Flex> 
+      <Flex>
       <Freetrial />
+      </Flex>
+     
+      <Welcome/>
     </Box>
   );
 }
