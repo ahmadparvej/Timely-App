@@ -15,8 +15,6 @@ import HomePart1 from "./Components/HomePage/HomePart1";
 function App() {
   return (
     <Box>
-     
-     
       <Welcome/>
     </Box>
   );
