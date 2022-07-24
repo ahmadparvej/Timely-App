@@ -64,7 +64,7 @@ const Welcome = () => {
         <img className="welimg" src="https://dou6see51s3xi.cloudfront.net/images/workspace_details-aea830517eac51ebac8d1d5a00f35f1d.png"
         />
            <div className="center">shristi</div>
-      
+      <div>absc</div>
       </div>
     </div>
   )
