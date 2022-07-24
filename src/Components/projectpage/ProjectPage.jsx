@@ -1,5 +1,11 @@
 import React from "react";
-import { Flex, Box, Heading, Text, Wrap , Tabs,
+import {
+  Flex,
+  Box,
+  Heading,
+  Text,
+  Wrap,
+  Tabs,
   TabList,
   TabPanels,
   Tab,
@@ -15,9 +21,11 @@ import ProjectTab from "../projectTabs/ProjectTab";
 
 const ProjectPage = () => {
   return (
-    <Box w="100%">
-      <ProjectNav />
-      <ProjectTab/>
+    <Box w="100%" pl="40px" pr="40px" background={"#eef1f2"}>
+      <Box w="100%"  >
+        <ProjectNav />
+        <ProjectTab />
+      </Box>
     </Box>
   );
 };

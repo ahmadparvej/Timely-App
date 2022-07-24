@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import {
     Box,
@@ -86,10 +87,16 @@ export const NewProject = () => {
                 {/* navbar */}
                 <Flex direction="column" pb="70px">
                     <HStack justifyContent="space-between" mb="15px">
-                        <Button variant="outline" colorScheme="gray" color="grey" borderWidth="3px">
-                            <Icon as={BiLeftArrowAlt} />
-                            Back
-                        </Button>
+                       <Button
+              variant="outline"
+              colorScheme="gray"
+              color="grey"
+              borderWidth="3px"
+              onClick={()=>navigate("/projects")}
+            >
+              <Icon as={BiLeftArrowAlt} />
+              Back
+            </Button>
                         <Button bg="#3D73DA" color="white" p="5px 15px" _hover="#0a2d6e" onClick={handleSubmit}>Create Project</Button>
                     </HStack>
                     <HStack>
@@ -337,5 +344,7 @@ export const NewProject = () => {
                 </Box>
             </Box>
         </Box>
-    )
-}
+      </Box>
+    </Box>
+  );
+};

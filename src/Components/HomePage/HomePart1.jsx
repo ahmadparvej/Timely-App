@@ -1,14 +1,19 @@
 import {
+  AtSignIcon,
   CalendarIcon,
   CheckCircleIcon,
+  ExternalLinkIcon,
   InfoIcon,
+  RepeatClockIcon,
+  SettingsIcon,
+  SunIcon,
   TimeIcon,
 } from "@chakra-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
-import img1 from "../Images/img1.jpg"
-import img2 from "../Images/img2.jpg"
+import img1 from "../Images/img1.jpg";
+import img2 from "../Images/img2.jpg";
 
 const HomePart1 = () => {
   return (
@@ -166,22 +171,179 @@ const HomePart1 = () => {
             </div>
           </div>
         </div>
-        <div className={styles.connectyourstack}>
+        {/* <div className={styles.connectyourstack}>
           <div className={styles.connectyourstack2}>
-           
             <div className={styles.connectyourstack3}>
               <div className={styles.connectyourstack4}>
-<p>kiran</p>
+                <p>kiran</p>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        <div className={styles.trusted}>
+          <div className={styles.trusted1}>
+            <div className={styles.trusted12}>
+              <SunIcon boxSize={55} />
+              <h3>Trusted by 5000+ businesses globally</h3>
+              <p>
+                Whether you have hundreds of colleagues or none at all, with
+                Timely size doesn’t matter. We help businesses of all sizes
+                access the benefits of automatic time tracking, with flexible
+                subscription plans that scale to meet your needs.
+              </p>
+            </div>
+            <div className={styles.trusted2}>
+              <div className={styles.trusted21}>
+                <SunIcon />
+                <Link to="/">Specialist departments in corporates</Link>
+              </div>
+              <div className={styles.trusted21}>
+                <SettingsIcon />
+                <Link to="/">International firms and agency groups</Link>
+              </div>
+              <div className={styles.trusted21}>
+                <ExternalLinkIcon />
+                <Link to="/">Small businesses and startups</Link>
+              </div>
+              <div className={styles.trusted21}>
+                <AtSignIcon />
+                <Link to="/">Consultants and freelancers</Link>
+              </div>
+              <div className={styles.trusted21}>
+                <RepeatClockIcon />
+                <Link to="/">Inter-organizational partnership</Link>
+              </div>
+            </div>
+            <div className={styles.trusted3main}>
+              <div className={styles.trusted3}>
+                <div className={styles.trusted31}>
+                  <img
+                    src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/6257f2528a39956f438af4f5_global.jpg"
+                    alt=""
+                  />
+                </div>
+                <div className={styles.trusted32main}>
+                  <div className={styles.trusted32}>
+                    <h3>
+                      “Timely is helping our organization transform time
+                      tracking from a chore to a simple review process.”
+                    </h3>
+                    <img
+                      src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/6257f2528a39952ab78af332_grant-thornton-vector-logo.svg"
+                      alt=""
+                    />
+                    <p>
+                      See how <strong>Grant Thornton </strong> leverages
+                      Timely’s automation to increase time tracking accuracy and
+                      efficiency across its Legal and Finance, Tax and
+                      Regulatory, and IT departments.
+                    </p>
+                    <Link to="/">Grant Thornton case study</Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className={styles.connectyourstack}>
-          <div>
+        <div className={styles.awards}>
+          <div className={styles.awards1}>
             <div>
-              <img src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/625c168b07e04cf345cd2b3d_tm-arrow-wh.svg" alt="" />
+              <img
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/62b3651fd96ad4e0c44915ed_TimeTracking_MostImplementable_Total.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/62b36657dfae2feee178fee9_TimeTracking_MomentumLeader_Leader.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/62b3651fc9eb5ab5b7d8536c_TimeTracking_Leader_Leader.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                className={styles.awardsbigimg}
+                styles="width:150px;"
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/6257f2528a3995b0a08af4da_loveus.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/62b3668136276388dc2815e8_TimeTracking_HighPerformer_Mid-Market_HighPerformer.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/62b3668136276388dc2815e8_TimeTracking_HighPerformer_Mid-Market_HighPerformer.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://assets-global.website-files.com/6257f2528a39952d4e8af286/62b3651fdfae2ff62378f39f_TimeTracking_BestRelationship_Total.svg"
+                alt=""
+              />
             </div>
           </div>
+        </div>
+        <div className={styles.try}>
+          <div className={styles.try1}>
+            <h2>Try <span>Timely</span> for free!</h2>
+            <p>
+              Discover the power of Timely's automated time tracking with a
+              14-day free trial
+            </p>
+            <div className={styles.part1_left_input}>
+              <input type="email" placeholder="Enter your work email" />{" "}
+              <input type="submit" value={"Start my free trial"} />
+            </div>
+            <div className={styles.try2}>
+              <div className={styles.flex}>
+                <img
+                  width="13px"
+                  height="13px"
+                  src="https://assets-global.website-files.com/5db165cbf782f992df567ae5/60f835b74a8c57e4188a2912_Icon.svg"
+                  alt=""
+                />
+                <p className={styles.part1_leftp2}>
+                  Trusted by 5000+ businesses globally
+                </p>
+              </div>
+              <div className={styles.flex}>
+                <img
+                  width="17px"
+                  height="13px"
+                  src="https://assets-global.website-files.com/5db165cbf782f992df567ae5/60f835b74a8c57c62c8a28e4_thumb-down.svg"
+                  alt=""
+                />
+                <p className={styles.part1_leftp2}>
+                  Free 14-day trial--No credit cards needed
+                </p>
+              </div>
+              <div className={styles.flex}>
+                <img
+                  width="20px"
+                  height="13px"
+                  src="https://assets-global.website-files.com/5db165cbf782f992df567ae5/60f835b74a8c57f43e8a2916_light-bulb.svg"
+                  alt=""
+                />
+                <p className={styles.part1_leftp2}>
+                  Reduce time tracking admin by 75%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.try3}>
+              <p>20 people or more? </p>
+              <Link to="/"> Get a personalized introduction to Timely</Link>
+            </div>
         </div>
       </div>
     </div>
