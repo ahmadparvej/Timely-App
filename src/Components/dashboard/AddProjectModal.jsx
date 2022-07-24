@@ -6,8 +6,11 @@ import { useState } from 'react';
 import { useTimer } from './../../Hooks/useTimer';
 
 import {Modal, ModalOverlay,ModalContent, ModalFooter, ModalBody, Button, useDisclosure} from '@chakra-ui/react'
+import { useEffect } from 'react';
+import axios from 'axios';
 
 export function AddProjectModal({handleTasks}) {
+    const [projects, setProjects] = useState([])
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [toggleTimer, setToggleTimer] = useState(true)
     const [initTime, setInitTime] = useState(0)
@@ -17,7 +20,8 @@ export function AddProjectModal({handleTasks}) {
     const [selectProject, setSelectProject] = useState("")
 
     const handleSubmit = ()=>{
-      let payload={title,selectProject,rate:15,color:"#47b17c"}
+      let obj = projects.filter((el)=>el.projectName===selectProject);
+      let payload = {...obj[0],title,price:15}
       handleTasks(payload)
       onClose()
     }
@@ -29,6 +33,10 @@ export function AddProjectModal({handleTasks}) {
       }
       setToggleTimer(!toggleTimer)
     }
+
+    useEffect(()=>{
+      axios.get("https://evening-castle-55317.herokuapp.com/user/projects").then((res)=>setProjects(res.data))
+    },[])
     return (
       <>
       <Button background="#3d73da" color="white" p="25px" _hover={{background:"blue"}} onClick={onOpen}>New Entry</Button>
@@ -37,10 +45,13 @@ export function AddProjectModal({handleTasks}) {
           <ModalContent background="#eff1f2">
             <ModalBody my="15px">
                   <VStack gap="10px" background="white" p="10px">
-                        <Input placeHolder="Add a note for this work" onChange={(e)=>setTitle(e.target.value)}/>
+                        <Input placeholder="Add a note for this work" onChange={(e)=>setTitle(e.target.value)}/>
                         <Select placeholder='Select Project' onChange={(e)=>setSelectProject(e.target.value)}>
-                            <option value='Communication'>Communication</option>
-                            <option value='General'>General</option>
+                            {projects.map((el,index)=>{
+                              return <option key={index} value={el.projectName} style={{background:el.singColor}}>
+                                {el.projectName} ({el.client})
+                              </option>
+                            })}
                         </Select>
                         <Stack w="100%" background="rgb(204, 204, 204)" p="10px">
                             <Heading as="h3" size="sm" fontWeight="500">Logged time</Heading>

@@ -1,18 +1,29 @@
 import React,{useState} from "react";
-import { Stack, Text, Flex, HStack, VStack, Box, Heading, Button, Icon, Input} from "@chakra-ui/react";
+import { Stack, Text, Flex, HStack, Box, Heading, Button, Icon, Input} from "@chakra-ui/react";
 
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import { GoPrimitiveDot } from "react-icons/go";
 
 import { ProfileMenu } from "./ProfileMenu";
 import { AddProjectModal } from './AddProjectModal';
+import { useTimer } from './../../Hooks/useTimer';
+
 
 export const Dashboard = () => {
+  const [toggleTimer, setToggleTimer] = useState(true)
   const [tasks, setTasks] = useState([])
-
   const handleTasks=(newTask)=>{
     setTasks([...tasks,newTask])
   }
-  console.log(tasks);
+  const handleTimer=()=>{
+    if(toggleTimer){
+      start();
+    }else{
+      stop();
+    }
+    setToggleTimer(!toggleTimer)
+  }
+  const {start,stop,countDown} = useTimer(0)
   return (
     <Stack w="90%" m="1rem" gap="1rem">
       <Flex minWidth="max-content" justifyContent="space-between">
@@ -24,7 +35,7 @@ export const Dashboard = () => {
         <HStack border="2px solid #e7e9eb" borderRadius="4px">
           <Button>{"<"}</Button>
           <Input
-            placeHolder="Select Date and Time"
+            placeholder="Select Date and Time"
             size="md"
             backgroundColor="#ffffff"
             type="datetime-local"
@@ -58,12 +69,18 @@ export const Dashboard = () => {
           <Heading as="h4" size="md">0h</Heading>
           </Stack>
           <Stack p="1rem">
-          {tasks.map((el)=>{
-            return <Box bg="#f2f2f2" p="8px" borderRadius="5px">
-              <Stack bg={el.color} p="8px" borderRadius="5px" color="white">
+          {tasks.map((el,index)=>{
+            return <Box key={index} bg="#f2f2f2" p="8px" borderRadius="5px">
+              <Stack bg={el.singColor} p="8px" borderRadius="5px" color="white">
                 <Heading as="h4" size="sm">{el.title}</Heading>
-                <Heading as="h4" size="xs">{el.selectProject}</Heading>
-                <Heading as="h4" size="xs">${el.rate}</Heading>
+                <Flex><Heading as="h4" size="xs">{el.projectName}</Heading><Icon as={GoPrimitiveDot}/><Heading as="h4" size="xs">{el.client}</Heading></Flex>
+                <Flex justify="space-between">
+                  <Heading as="h4" size="xs" color="black">${el.price}</Heading>
+                  <Stack>
+                  <Heading as="h3" size="md" fontWeight="100px">{countDown.hrs}h {countDown.mins}m {countDown.secs}s</Heading>
+                  {toggleTimer?<Button bg='#44505e' size='xs' onClick={handleTimer}>Timer</Button>:<Button colorScheme='yellow' size='xs' onClick={handleTimer}>Pause</Button>}      
+                  </Stack>
+                </Flex>
               </Stack>
               <Text color="grey">No memories</Text>
             </Box>
