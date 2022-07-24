@@ -24,9 +24,10 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import axios from "axios";
 
 import React from "react";
-export function BackdropExample({ele}) {
-  const projectId = JSON.parse(localStorage.getItem("projectId"));
-console.log(ele)
+export function BackdropExample({ele,getData}) {
+  console.log(ele)
+  const projectId = ele._id;
+  console.log(projectId)
   const OverlayTwo = () => (
     <ModalOverlay
       bg="none"
@@ -38,7 +39,10 @@ console.log(ele)
   function handleDelete() {
     axios.delete(
       `https://evening-castle-55317.herokuapp.com/user/:${projectId}`
-    );
+    ).then((res) =>{
+      getData()
+    })
+
   }
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [overlay, setOverlay] = React.useState(<OverlayTwo />);

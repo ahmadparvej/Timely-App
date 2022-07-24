@@ -47,9 +47,14 @@ function handleClickDelete(e){
 console.log(e)
 }
 
+function handleEdit(ele) {
+  const projectId= ele._id
+  axios.patch(
+    `https://evening-castle-55317.herokuapp.com/user/:${projectId}`
+  );
+}
 function ProjectDash() {
   const [projects, setProjects] = useState([]);
-  const projectId = JSON.parse(localStorage.getItem("projectId"));
 
   useEffect(() => {
     getData();
@@ -121,9 +126,7 @@ function ProjectDash() {
                   w="auto"
                   boxShadow="base"
                 >
-                  {/* <PopoverHeader fontWeight="semibold">
-                    Customization
-                  </PopoverHeader> */}
+                 
                   <PopoverArrow bg="white" />
                   <PopoverCloseButton bg="white" />
                   <PopoverBody pt="25px">
@@ -145,7 +148,7 @@ function ProjectDash() {
                       mb="10px"
                     >
                       <Icon as={GrEdit} />
-                      <Text fontSize={"sm"}>Edit</Text>
+                      <Text fontSize={"sm"} onClick={(ele)=>{handleEdit(ele)}} >Edit</Text>
                     </Flex>
                     <Flex
                       pb="2px"
@@ -167,19 +170,8 @@ function ProjectDash() {
                       <Icon as={FaArchive} />
                       <Text fontSize={"sm"}>Archive</Text>
                     </Flex>
-                    {/* <Flex
-                      pb="2px"
-                      gap="5px"
-                      _hover={{ background: "whitesmoke" }}
-                      alignItems={"center"}
-                      mb="10px"
-                      color={"red"}
-                      onClick={()=>BackdropExample()}
-                    >
-                      <Icon as={RiDeleteBin6Line} />
-                      <Text fontSize={"sm"}>Delete</Text>
-                    </Flex> */}
-                    <BackdropExample id={ele} />
+                 
+                    <BackdropExample ele={ele} getData={getData} />
                   </PopoverBody>
                 </PopoverContent>
               </Popover>
