@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { IoMdBriefcase } from "react-icons/io";
 
 import { IconType } from 'react-icons';
-import {BsFillClockFill,BsFillBagFill, BsBarChartFill, BsFillArrowUpSquareFill} from "react-icons/bs"
+import {BsFillClockFill, BsBarChartFill, BsFillArrowUpSquareFill} from "react-icons/bs"
 import {MdTask} from "react-icons/md"
 import {ImUser} from "react-icons/im"
 import {AiFillDollarCircle} from "react-icons/ai"
