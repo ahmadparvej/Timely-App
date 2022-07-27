@@ -23,20 +23,9 @@ Deployed Link :[https://spareshub-clone.netlify.app/](https://timely-app-clone.n
 
 Below are some of the attached pictures of the website.
 
-Index Page →
+Full Screenshot →
 
-![index](https://user-images.githubusercontent.com/79194669/170877167-668dee89-a0cf-49e2-8f9f-b77b2a12e5f3.png)
-
-Login Page →
-
-![login](https://user-images.githubusercontent.com/79194669/170877179-a02dc1dd-aeca-4f3f-b5b3-128b5defe195.png)
-
-
-
-
-Franchise Page →
-
-![franchise](https://user-images.githubusercontent.com/79194669/170877186-fbcd7910-32e8-4e00-b859-e35354b518d6.png)
+![HomePage](https://github.com/ahmadparvej/gas-scarecrow-3264/blob/main/public/Screenshot/Timely-clone.png)
 
 As this was our first ever team project, we faced a lot of challenges. Github, a place where the world build the software was new to us. We faced challenges in creating repositories and pushing/pulling the code, it was all fun and games until we realised that it was easy (deliberate practice). We overcame all the challenges and worked towards the completion of the project in one week.
 
