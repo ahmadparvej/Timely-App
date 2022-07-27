@@ -28,7 +28,6 @@ import {
     Th,
     Tbody,
     Td,
-    Tfoot,
     TableContainer,
     Radio,
     PopoverHeader
@@ -38,13 +37,10 @@ import { BsCircleFill } from "react-icons/bs";
 import { MdArrowDropDown } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 
-
 const colors = ["#1976d2", "#00796b", "#2e7d32", "#d4e157", "#ffeb3b", "#ffb74d", "#ff8a65",
     "#e57373", "#b72367", "#7e57c2", "#bbdefb", "#b2dfdb", "#c8e6c9", "#f0f4c3", "#fff59d",
     "#ffe0b2", "#ffccbc", "#ffcdd2", "#efaecc", "#d1c4e9",
 ]
-
-
 
 export const NewProject = () => {
     const [newProject, setNewProject] = useState({})

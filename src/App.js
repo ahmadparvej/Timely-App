@@ -1,11 +1,10 @@
-import Sidebar from "./Components/Sidebar.tsx";
-import { Box, ControlBox, Flex } from "@chakra-ui/react";
+import { Box} from "@chakra-ui/react";
 import Freetrial from "./Components/signup/Freetrial";
 import Welcome from "./Components/welcome/Welcome";
 import Login from "./Components/login/Login";
 import ProjectPage from "./Components/projectpage/ProjectPage";
 
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { Dashboard } from "./Components/dashboard/Dashboard";
 import { Tasks } from "./Components/Tasks/Tasks";
@@ -25,7 +24,6 @@ function App() {
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/new" element={<NewProject />} />
-
         <Route path="dashboard" element={<SidebarOverlay />}>
           <Route path="" element={<Dashboard />} />
           <Route path="hours" element={<Dashboard />} />

@@ -1,6 +1,5 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { TriangleDownIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
@@ -15,7 +14,6 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import {
