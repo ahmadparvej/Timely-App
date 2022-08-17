@@ -27,7 +27,6 @@ Full Screenshot →
 
 ![HomePage](https://github.com/ahmadparvej/gas-scarecrow-3264/blob/main/public/Screenshot/Timely-clone.png)
 
-As this was our first ever team project, we faced a lot of challenges. Github, a place where the world build the software was new to us. We faced challenges in creating repositories and pushing/pulling the code, it was all fun and games until we realised that it was easy (deliberate practice). We overcame all the challenges and worked towards the completion of the project in one week.
 
 As we are still in the learning phase, the journey of building this website was very nice. We realised we could’ve achieved even more precision in building the website, but time was running out.
 
